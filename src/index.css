@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 224 71% 4%; /* Dark Blue/Black - for text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    /* New Green Palette */
+    --primary: 120 60% 20%; /* Dark Green */
+    --primary-foreground: 0 0% 100%; /* White text on dark green */
+
+    --secondary: 120 30% 35%; /* Military Green - can be used for gradients or secondary elements */
+    --secondary-foreground: 0 0% 100%; /* White text on military green */
+
+    --muted: 120 10% 95%; /* Very light green/gray for backgrounds */
+    --muted-foreground: 120 20% 30%; /* Darker text for muted backgrounds */
+    
+    --accent: 45 85% 60%; /* Gold - kept for accents */
+    --accent-foreground: 45 100% 15%; /* Darker text for gold bg */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 20% 85%; /* Lighter green/gray border */
+    --input: 120 20% 90%; /* Lighter green/gray input background */
+    --ring: 120 60% 30%; /* Dark Green for focus rings */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 120 40% 5%; /* Very Dark Green for dark mode bg */
+    --foreground: 0 0% 98%; /* White text */
+
+    --card: 120 40% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 120 40% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 120 50% 30%; /* Slightly lighter Dark Green for dark mode */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 25% 25%; /* Darker Military Green for dark mode */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 120 30% 15%;
+    --muted-foreground: 120 10% 70%; 
+
+    --accent: 45 70% 55%; 
+    --accent-foreground: 45 100% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 30% 20%;
+    --input: 120 30% 20%;
+    --ring: 120 50% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  @supports (font-variation-settings: normal) {
+    body {
+      font-family: 'Inter var', sans-serif;
+    }
+  }
+}
+
+body {
+  background-image: linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--secondary)));
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.7);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif; 
+}
